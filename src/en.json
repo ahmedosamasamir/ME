@@ -1,0 +1,88 @@
+{
+  "header": {
+    "arabic": "Arabic",
+    "english": "English",
+    "darkMode": "Dark Mode"
+  },
+  "body": {
+    "heroTitle": "Hello, I'm Ahmed Osama Samir Elsayed",
+    "jobTitle": "Web Developer (Full-Stack Developer)",
+    "heroDescription": "I build amazing websites and web applications",
+    "contactMe": "Contact Me",
+    "aboutMeTitle": "About Me",
+    "aboutMeDescription": "Hello,\nI am a Full-Stack Web Developer specializing in designing, developing, and deploying high-quality websites and web applications that combine outstanding performance, modern design, and exceptional user experience.\nI use a comprehensive set of modern technologies including HTML5, CSS3, JavaScript, React, Redux, and Tailwind CSS on the frontend, along with robust backend solutions using Node.js, SQL databases, MongoDB, and .NET frameworks to build secure, scalable, and maintainable systems.\nMy approach focuses on delivering tailored solutions that precisely align with your business goals. I specialize in developing websites that are:\n- High-performing and optimized for fast loading on all devices and browsers\n- Strategically designed to boost user engagement, increase conversions, and retain customers\n- Scalable and maintainable to support your growth and changing business needs\n- SEO-optimized to improve your site's ranking and increase organic traffic\nI believe the success of any project starts with a deep understanding of the client's objectives, challenges, and target audience. Therefore, I emphasize transparent communication, meticulous attention to detail, and delivering results that exceed expectations.\nWhether you are an entrepreneur launching a new idea or a company seeking to update its digital presence, I offer custom web solutions backed by practical experience and a commitment to quality and innovation.\nLet's collaborate to transform your ideas into impactful digital experiences that contribute to tangible success.",
+    "educationTitle": "Education",
+    "educationDescription": "Al Obour Institute\nBachelor of Computer Science, Third Year\nExpected Graduation: 2026",
+    "skills": "Projects",
+    "projectoneDescription": "All Techno is a website specializing in offering the latest tech products, from computers and smartphones to accessories and modern smart technologies. The site aims to provide an easy and fast shopping experience with exclusive offers and high quality on every product.",
+    "projecttwoDescription": "GoMarket is your smart platform for buying and selling products with ease. We offer a wide range of goods including electronics, fashion, home tools, and more — all with high quality and competitive prices.\nWith a simple interface and smooth shopping experience, we help you quickly find what you need, pay securely, and get delivery to your doorstep.",
+    "projectTwo": "E-commerce (GoMarket)",
+    "projectthreeDescription": "Personal Medical Record is a digital system that helps you save and track your personal medical records in one secure and organized place. You can store reports, tests, medications, and appointments, and easily access them anytime. Whether you are a patient or a healthcare provider, the site offers an easy experience for managing your medical information with confidence and privacy.",
+    "projectThree": "Personal Medical Record",
+    "projects": "Skills",
+    "certificate": "Certificates and Scholarships",
+    "certificationstitle": "Egypt Digital Pioneers Initiative (DEPI)",
+    "certificationstrack": "React Frontend Developer Track",
+    "certificationsdescription": "Gained comprehensive knowledge of HTML, CSS, JavaScript, and React. Developed a graduation project combining React and Node.js to produce a realistic web application."
+  },
+  "certificates": [
+    {
+      "title": "Completion Certificate – Egypt Digital Pioneers Initiative (DEPI)",
+      "name": "Ahmed Osama Samir Elsayed",
+      "field": "Field: Software Development – React Frontend Developer Track",
+      "duration": "Date: April to October 2024",
+      "issued_by": "Issued by: Ministry of Communications and Information Technology – Egypt",
+      "description": "Successfully completed the training program in software development, specializing in frontend development with React, demonstrating competence in building interactive and responsive web applications.\nGained comprehensive knowledge of HTML, CSS, JavaScript, and React. Developed a graduation project combining React and Node.js to produce a realistic web application."
+    },
+    {
+      "title": "Graduation Certificate – Egypt Digital Pioneers Initiative (DEPI)",
+      "name": "Ahmed Osama Samir Elsayed",
+      "duration": "Date: April to October 2024",
+      "issued_by": "Issued by: Ministry of Communications and Information Technology – Egypt",
+      "description": "Successfully met all academic and practical requirements of the Egypt Digital Pioneers program, demonstrating a strong foundation in software engineering principles and project-based learning."
+    },
+    {
+      "title": "Completion Certificate – Business English Track (Phase One) (DEPI)",
+      "name": "Ahmed Osama Samir",
+      "duration": "Date: April to October 2024",
+      "issued_by": "Issued by: Ministry of Communications and Information Technology – in collaboration with OTO Courses platform",
+      "description": "Successfully completed the first phase of the Business English track, enhancing professional communication skills, business terminology, and interview preparation in English within the tech field."
+    },
+    {
+      "title": "Course Completion Certificate – Cisco Networking Academy",
+      "name": "Ahmed Osama",
+      "field": "Networking Fundamentals",
+      "date": "November 30, 2023",
+      "issued_by": "Cisco Networking Academy",
+      "description": "Successfully completed the Networking Fundamentals course and earned a student-level certificate. Demonstrated proficiency in basic networking concepts and skills.",
+      "skills": [
+        "Skills:",
+        "Explained key concepts in network communication and network types/components.",
+        "Explained the importance of standards and protocols in network communications.",
+        "Described how communication occurs in Ethernet networks.",
+        "Explained the properties of IP addresses and the use of IPv4 addresses in networking.",
+        "Explained characteristics of IPv6 addresses.",
+        "Explained how routers connect networks together.",
+        "Used various tools to test and troubleshoot network connectivity.",
+        "Configured integrated wireless router and wireless client for secure internet access."
+      ]
+    }
+  ],
+  "skillsTooltips": {
+    "html": "HTML is the foundational language for building web pages, used to define elements like headings, paragraphs, images, and links, structuring any website.",
+    "css": "CSS is a styling language used to make web pages visually appealing by controlling colors, fonts, spacing, and layout of elements.",
+    "js": "JavaScript is a programming language that adds interactivity to websites, such as dropdown menus, responsive buttons, and form validation.",
+    "react": "React is a JavaScript library developed by Meta (formerly Facebook) for building fast, interactive user interfaces based on reusable components.",
+    "tailwind": "Tailwind CSS is a modern CSS framework that uses utility classes to design interfaces quickly and efficiently without writing custom CSS.",
+    "redux": "Redux is a state management library for JavaScript applications, helping organize and share data across components clearly and easily.",
+    "node": "Node.js is a JavaScript runtime environment used to build servers, handle databases, files, and backend processes in web applications.",
+    "git": "Git is a version control system used to track changes in code files and facilitate teamwork without losing updates.",
+    "github": "GitHub is an online platform hosting Git repositories, enabling developers to collaborate, share projects, and track issues and changes.",
+    "docker": "Docker is a tool that helps developers package their applications with everything needed to run them in isolated containers, making deployment easy and fast on any device."
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "whatsapp": "WhatsApp",
+    "linkedin": "LinkedIn"
+  }
+}

@@ -1,0 +1,125 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  /* ✅ شفافية ووميض */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: fixed; /* يجعل الهيدر ثابتًا في الأعلى */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999; /* فوق كل العناصر */
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease, color 0.3s ease;
+}
+/* RTL / LTR */
+body.rtl {
+  direction: rtl;
+  text-align: right;
+}
+body.ltr {
+  direction: ltr;
+  text-align: left;
+}
+/* إخفاء الهيدر عند التمرير لأسفل */
+.hide-header {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.header-logo img {
+  height: 50px;
+  margin-left: -8px;
+  
+
+  /* ✅ جعل اللوجو دائري */
+  border-radius: 50%;
+
+  /* ✅ وميض خفيف */
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+  transition: box-shadow 0.3s ease;
+}
+/* تأثير عند اللغة الإنجليزية (الاتجاه LTR) */
+body.ltr .header-logo img:hover,
+header.ltr .header-logo img:hover {
+  transform: scale(4) translate(30px, 30px);
+  cursor: zoom-in;
+  z-index: 1000;
+  position: relative;
+}
+
+/* تأثير عند اللغة العربية (الاتجاه RTL) */
+body.rtl .header-logo img:hover,
+header.rtl .header-logo img:hover {
+  transform: scale(4) translate(-30px, 30px); /* لاحظ تغيير الاتجاه */
+  cursor: zoom-in;
+  z-index: 1000;
+  position: relative;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.header-btn {
+  padding: 8px 14px;
+  background-color: transparent;
+  border: 2px solid var(--btn-border);
+  color: var(--btn-text);
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.header-btn:hover:not(:disabled) {
+  background-color: var(--btn-hover-bg);
+  color: var(--btn-hover-text);
+  border-color: var(--btn-hover-border);
+}
+
+.header-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* ✅ الوضع الفاتح */
+.header.light {
+  --bg-color: rgba(255, 255, 255, 0.6);
+  --text-color: #000000;
+
+  --btn-border: #3b82f6;
+  --btn-text: #3b82f6;
+  --btn-hover-bg: #3b82f6;
+  --btn-hover-text: #ffffff;
+  --btn-hover-border: #3b82f6;
+}
+
+/* ✅ الوضع الليلي */
+.header.dark {
+  --bg-color: rgba(0, 0, 0, 0.6);
+  --text-color: #ffffff;
+
+  --btn-border: #3b82f6;
+  --btn-text: #3b82f6;
+  --btn-hover-bg: #3b82f6;
+  --btn-hover-text: #000000;
+  --btn-hover-border: #3b82f6;
+}
+
+/* زر الوضع الليلي */
+.dark-mode-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.1em;
+}

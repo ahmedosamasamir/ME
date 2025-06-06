@@ -1,0 +1,66 @@
+.footer {
+  padding: 1rem;
+}
+
+.footer.dark {
+  background-color: #1b1b1b;
+  color: #fff;
+}
+
+.footer.light {
+  background-color: #f2f2f2;
+  color: #000;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+}
+
+.footer-section {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.contact-section {
+  justify-content: flex-start;
+}
+
+.social-section {
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.whatsapp-link {
+  color: #25D366;
+}
+
+.linkedin-link {
+  color: #0077B5;
+}
+
+.social-section a {
+  color: inherit;
+  transition: transform 0.3s;
+}
+
+.social-section a:hover {
+  transform: scale(1.2);
+}
+
+.copyright {
+  justify-content: center;
+  font-size: 0.9rem;
+}
