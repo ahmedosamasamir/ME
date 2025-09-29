@@ -25,7 +25,7 @@ import three from "../componants/img/img/3.jpg";
 import four from "../componants/img/img/4.jpg"
 
 // CV file
-import cvFile from "../componants/CV/AHEMD_OSAMA_CV.pdf";
+import cvFile from "../componants/AHEMD_OSAMA_CV.pdf";
 
 // Icons for skills
 import {
