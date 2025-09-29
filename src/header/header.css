@@ -1,125 +1,314 @@
+:root {
+  /* Primary Colors */
+  --primary-50: #f0f9ff;
+  --primary-100: #e0f2fe;
+  --primary-500: #0ea5e9;
+  --primary-600: #0284c7;
+  --primary-700: #0369a1;
+  
+  /* Neutral Colors */
+  --neutral-50: #f8fafc;
+  --neutral-100: #f1f5f9;
+  --neutral-200: #e2e8f0;
+  --neutral-300: #cbd5e1;
+  --neutral-400: #94a3b8;
+  --neutral-500: #64748b;
+  --neutral-600: #475569;
+  --neutral-700: #334155;
+  --neutral-800: #1e293b;
+  --neutral-900: #0f172a;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--primary-500), var(--primary-700));
+  --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-glow: 0 0 20px rgba(14, 165, 233, 0.3);
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: background-color 0.3s ease, color 0.3s ease;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 12px 24px;
+  background: var(--header-bg);
+  color: var(--header-text);
+  box-shadow: var(--header-shadow);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  font-weight: 500;
 
-  /* ✅ شفافية ووميض */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  position: fixed; /* يجعل الهيدر ثابتًا في الأعلى */
+  /* Glass morphism effect */
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--header-border);
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 999; /* فوق كل العناصر */
-  transition: transform 0.3s ease-in-out, background-color 0.3s ease, color 0.3s ease;
+  z-index: 1000;
+  transform: translateY(0);
 }
-/* RTL / LTR */
+
+/* Header hide animation */
+.hide-header {
+  transform: translateY(-100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Logo Styles */
+.header-logo {
+  position: relative;
+}
+
+.header-logo img {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid var(--logo-border);
+  box-shadow: var(--logo-shadow);
+  cursor: pointer;
+}
+
+/* Logo hover effects with direction awareness */
+body.ltr .header-logo img:hover,
+header.ltr .header-logo img:hover {
+  transform: scale(4) translate(25px, 25px);
+  box-shadow: var(--shadow-glow);
+  z-index: 1000;
+}
+
+body.rtl .header-logo img:hover,
+header.rtl .header-logo img:hover {
+  transform: scale(4) translate(-25px, 25px);
+  box-shadow: var(--shadow-glow);
+  z-index: 1000;
+}
+
+/* Buttons Container */
+.header-buttons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Base Button Styles */
+.header-btn {
+  padding: 10px 20px;
+  background: var(--btn-bg);
+  border: 1.5px solid var(--btn-border);
+  color: var(--btn-text);
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.header-btn:hover::before {
+  left: 100%;
+}
+
+.header-btn:hover:not(:disabled) {
+  background: var(--btn-hover-bg);
+  border-color: var(--btn-hover-border);
+  color: var(--btn-hover-text);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.header-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.header-btn:disabled {
+  background: var(--btn-disabled-bg);
+  color: var(--btn-disabled-text);
+  border-color: var(--btn-disabled-border);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Active state for language buttons */
+.header-btn.active {
+  background: var(--btn-active-bg);
+  color: var(--btn-active-text);
+  border-color: var(--btn-active-border);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Dark Mode Button Specific Styles */
+.dark-mode-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  padding: 10px 16px;
+  background: var(--dark-mode-btn-bg) !important;
+  border: 1.5px solid var(--dark-mode-btn-border) !important;
+  color: var(--dark-mode-btn-text) !important;
+}
+
+.dark-mode-btn:hover:not(:disabled) {
+  background: var(--dark-mode-btn-hover-bg) !important;
+  border-color: var(--dark-mode-btn-hover-border) !important;
+  color: var(--dark-mode-btn-hover-text) !important;
+}
+
+/* Light Theme Variables */
+.header.light {
+  --header-bg: rgba(255, 255, 255, 0.8);
+  --header-text: var(--neutral-800);
+  --header-border: rgba(148, 163, 184, 0.2);
+  --header-shadow: var(--shadow-md);
+  
+  --logo-border: var(--primary-100);
+  --logo-shadow: 0 0 15px rgba(14, 165, 233, 0.4);
+  
+  --btn-bg: transparent;
+  --btn-border: var(--neutral-300);
+  --btn-text: var(--neutral-700);
+  
+  --btn-hover-bg: var(--primary-500);
+  --btn-hover-border: var(--primary-500);
+  --btn-hover-text: white;
+  
+  --btn-active-bg: var(--primary-500);
+  --btn-active-border: var(--primary-500);
+  --btn-active-text: white;
+  
+  --btn-disabled-bg: transparent;
+  --btn-disabled-text: var(--neutral-400);
+  --btn-disabled-border: var(--neutral-200);
+  
+  --dark-mode-btn-bg: var(--neutral-100);
+  --dark-mode-btn-border: var(--neutral-200);
+  --dark-mode-btn-text: var(--neutral-700);
+  
+  --dark-mode-btn-hover-bg: var(--neutral-200);
+  --dark-mode-btn-hover-border: var(--neutral-300);
+  --dark-mode-btn-hover-text: var(--neutral-900);
+}
+
+/* Dark Theme Variables */
+.header.dark {
+  --header-bg: rgba(15, 23, 42, 0.8);
+  --header-text: var(--neutral-100);
+  --header-border: rgba(71, 85, 105, 0.3);
+  --header-shadow: var(--shadow-lg);
+  
+  --logo-border: var(--primary-900);
+  --logo-shadow: 0 0 20px rgba(14, 165, 233, 0.6);
+  
+  --btn-bg: transparent;
+  --btn-border: var(--neutral-700);
+  --btn-text: var(--neutral-300);
+  
+  --btn-hover-bg: var(--primary-500);
+  --btn-hover-border: var(--primary-500);
+  --btn-hover-text: white;
+  
+  --btn-active-bg: var(--primary-500);
+  --btn-active-border: var(--primary-500);
+  --btn-active-text: white;
+  
+  --btn-disabled-bg: transparent;
+  --btn-disabled-text: var(--neutral-600);
+  --btn-disabled-border: var(--neutral-800);
+  
+  --dark-mode-btn-bg: var(--neutral-800);
+  --dark-mode-btn-border: var(--neutral-700);
+  --dark-mode-btn-text: var(--neutral-200);
+  
+  --dark-mode-btn-hover-bg: var(--neutral-700);
+  --dark-mode-btn-hover-border: var(--neutral-600);
+  --dark-mode-btn-hover-text: var(--neutral-100);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 16px;
+  }
+  
+  .header-buttons {
+    gap: 8px;
+  }
+  
+  .header-btn {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+  
+  .header-logo img {
+    height: 40px;
+    width: 40px;
+  }
+  
+  body.ltr .header-logo img:hover,
+  header.ltr .header-logo img:hover {
+    transform: scale(3) translate(20px, 20px);
+  }
+  
+  body.rtl .header-logo img:hover,
+  header.rtl .header-logo img:hover {
+    transform: scale(3) translate(-20px, 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 8px 12px;
+  }
+  
+  .header-buttons {
+    gap: 6px;
+  }
+  
+  .header-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  
+  .dark-mode-btn span {
+    display: none; /* Hide text on very small screens */
+  }
+  
+  .dark-mode-btn {
+    padding: 6px 8px;
+  }
+}
+
+/* Smooth transitions for theme switching */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Body styles for RTL/LTR */
 body.rtl {
   direction: rtl;
   text-align: right;
 }
+
 body.ltr {
   direction: ltr;
   text-align: left;
-}
-/* إخفاء الهيدر عند التمرير لأسفل */
-.hide-header {
-  transform: translateY(-100%);
-  transition: transform 0.3s ease-in-out;
-}
-
-.header-logo img {
-  height: 50px;
-  margin-left: -8px;
-  
-
-  /* ✅ جعل اللوجو دائري */
-  border-radius: 50%;
-
-  /* ✅ وميض خفيف */
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
-  transition: box-shadow 0.3s ease;
-}
-/* تأثير عند اللغة الإنجليزية (الاتجاه LTR) */
-body.ltr .header-logo img:hover,
-header.ltr .header-logo img:hover {
-  transform: scale(4) translate(30px, 30px);
-  cursor: zoom-in;
-  z-index: 1000;
-  position: relative;
-}
-
-/* تأثير عند اللغة العربية (الاتجاه RTL) */
-body.rtl .header-logo img:hover,
-header.rtl .header-logo img:hover {
-  transform: scale(4) translate(-30px, 30px); /* لاحظ تغيير الاتجاه */
-  cursor: zoom-in;
-  z-index: 1000;
-  position: relative;
-}
-
-.header-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.header-btn {
-  padding: 8px 14px;
-  background-color: transparent;
-  border: 2px solid var(--btn-border);
-  color: var(--btn-text);
-  font-weight: 600;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.header-btn:hover:not(:disabled) {
-  background-color: var(--btn-hover-bg);
-  color: var(--btn-hover-text);
-  border-color: var(--btn-hover-border);
-}
-
-.header-btn:disabled {
-  opacity: 0.5;
-  cursor: default;
-}
-
-/* ✅ الوضع الفاتح */
-.header.light {
-  --bg-color: rgba(255, 255, 255, 0.6);
-  --text-color: #000000;
-
-  --btn-border: #3b82f6;
-  --btn-text: #3b82f6;
-  --btn-hover-bg: #3b82f6;
-  --btn-hover-text: #ffffff;
-  --btn-hover-border: #3b82f6;
-}
-
-/* ✅ الوضع الليلي */
-.header.dark {
-  --bg-color: rgba(0, 0, 0, 0.6);
-  --text-color: #ffffff;
-
-  --btn-border: #3b82f6;
-  --btn-text: #3b82f6;
-  --btn-hover-bg: #3b82f6;
-  --btn-hover-text: #000000;
-  --btn-hover-border: #3b82f6;
-}
-
-/* زر الوضع الليلي */
-.dark-mode-btn {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 1.1em;
 }
